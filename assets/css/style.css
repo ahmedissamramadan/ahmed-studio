@@ -426,3 +426,288 @@ footer {
   .ring.r1 { width: 300px; height: 300px; }
   .ring.r2 { width: 180px; height: 180px; }
 }
+
+/* ════════════════════════════════
+   CASE STUDY CARDS
+════════════════════════════════ */
+
+#work { padding: 8rem 0; position: relative; z-index: 1; }
+
+.cs-card {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  background: var(--bg2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  visual"
+    "body    visual"
+    "footer  footer";
+  transition: border-color 0.3s;
+}
+.cs-card:hover { border-color: var(--border-strong); }
+
+/* Header */
+.cs-header {
+  grid-area: header;
+  padding: 2.5rem 2.5rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.cs-meta {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1rem;
+}
+.cs-type {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase;
+}
+.cs-time {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  color: var(--muted); padding: 0.15rem 0.5rem;
+  border: 1px solid var(--border); border-radius: 2px;
+}
+.cs-title {
+  font-family: var(--font-display); font-size: 2.2rem;
+  font-weight: 300; line-height: 1.15; margin-bottom: 0.6rem;
+}
+.cs-tagline { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+
+/* Visual */
+.cs-visual {
+  grid-area: visual;
+  border-right: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  padding: 2.5rem;
+  background: var(--bg3);
+  min-height: 340px;
+  position: relative;
+  overflow: hidden;
+}
+[dir="rtl"] .cs-visual { border-right: none; border-left: 1px solid var(--border); }
+
+/* Body */
+.cs-body {
+  grid-area: body;
+  padding: 1.5rem 2.5rem 2rem;
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+.cs-block-title {
+  font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.06em; margin-bottom: 0.6rem;
+  color: var(--white);
+}
+.cs-block p { font-size: 0.85rem; color: var(--muted); line-height: 1.85; }
+
+.cs-steps { display: flex; flex-direction: column; gap: 0.55rem; }
+.cs-step {
+  display: flex; gap: 0.8rem; align-items: flex-start;
+  font-size: 0.82rem; color: var(--muted); line-height: 1.6;
+}
+.cs-step-n {
+  font-family: var(--font-mono); font-size: 0.6rem;
+  color: var(--gold); min-width: 1.8rem; flex-shrink: 0;
+  padding-top: 0.15rem; letter-spacing: 0.08em;
+}
+
+.cs-results {
+  display: flex; gap: 2rem; margin-top: 0.3rem;
+}
+.cs-result-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.res-num {
+  font-family: var(--font-display); font-size: 2rem;
+  color: var(--gold); font-weight: 300; line-height: 1;
+}
+.res-label { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.07em; }
+
+/* Footer */
+.cs-footer {
+  grid-area: footer;
+  border-top: 1px solid var(--border);
+  padding: 1.2rem 2.5rem;
+  display: flex; gap: 1.5rem; align-items: center;
+  flex-wrap: wrap; background: var(--bg);
+}
+.cs-tools { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.cs-tool {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  color: var(--gold-dim); padding: 0.2rem 0.55rem;
+  border: 1px solid rgba(201,168,64,0.2);
+  border-radius: 2px; letter-spacing: 0.05em;
+}
+.cs-dels { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-inline-start: auto; }
+.del-chip {
+  font-size: 0.68rem; color: var(--muted);
+  padding: 0.2rem 0.6rem;
+  background: var(--bg3); border-radius: 2px;
+  border: 1px solid var(--border);
+}
+
+/* ── VISUAL MOCKUPS ── */
+
+/* Amazon Mock */
+.mock-screen {
+  background: #fff; border-radius: 6px;
+  width: 260px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  overflow: hidden; position: relative; z-index: 2;
+}
+.mock-bar {
+  background: #232F3E; padding: 0.5rem 0.8rem;
+  display: flex; gap: 5px; align-items: center;
+}
+.mock-bar span {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+}
+.mock-body {
+  display: flex; gap: 0.8rem; padding: 0.8rem;
+}
+.mock-img-block {
+  width: 80px; height: 80px; flex-shrink: 0;
+  background: #f3f3f3; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+}
+.mock-product-emoji { font-size: 2rem; }
+.mock-info { flex: 1; }
+.mock-title-line {
+  height: 8px; background: #e0e0e0; border-radius: 2px;
+  margin-bottom: 6px; width: 90%;
+}
+.mock-stars { color: #FFA500; font-size: 0.65rem; margin-bottom: 4px; }
+.mock-price { color: #B12704; font-weight: bold; font-size: 0.85rem; margin-bottom: 6px; }
+.mock-btn-row { display: flex; flex-direction: column; gap: 4px; }
+.mock-btn {
+  padding: 3px 6px; border-radius: 3px;
+  font-size: 0.6rem; text-align: center; font-weight: 600;
+}
+.mock-btn.gold { background: #FFD814; color: #111; }
+.mock-btn.outline { background: #fff; border: 1px solid #ccc; color: #333; }
+
+.mock-floats {
+  position: absolute; inset: 0; pointer-events: none;
+  z-index: 1;
+}
+.mf {
+  position: absolute;
+  font-size: 0.65rem; font-family: var(--font-mono);
+  background: var(--bg); border: 1px solid var(--border-strong);
+  padding: 0.3rem 0.6rem; border-radius: 2px; color: var(--gold);
+  white-space: nowrap; letter-spacing: 0.05em;
+}
+.mf1 { top: 15%; right: 8%; }
+.mf2 { top: 45%; right: 5%; }
+.mf3 { bottom: 20%; right: 10%; }
+[dir="rtl"] .mf1 { right: auto; left: 8%; }
+[dir="rtl"] .mf2 { right: auto; left: 5%; }
+[dir="rtl"] .mf3 { right: auto; left: 10%; }
+
+/* KHEM Mock */
+.khem-canvas {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 1.5rem;
+}
+.khem-logo-mock {
+  text-align: center;
+  padding: 2rem 3rem;
+  border: 1px solid var(--border-strong);
+  background: #0d0a05;
+}
+.khem-eye { font-size: 2rem; display: block; margin-bottom: 0.3rem; }
+.khem-wordmark {
+  font-family: var(--font-display);
+  font-size: 2.2rem; letter-spacing: 0.3em;
+  color: var(--gold); font-weight: 300;
+}
+.khem-sub-text {
+  font-family: var(--font-mono); font-size: 0.55rem;
+  letter-spacing: 0.25em; color: var(--muted); margin-top: 0.3rem;
+}
+.khem-palette { display: flex; gap: 0.5rem; }
+.khem-swatch {
+  width: 28px; height: 28px; border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.khem-tag-badge {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  color: var(--gold); border: 1px solid var(--border-strong);
+  padding: 0.25rem 0.7rem; border-radius: 2px; letter-spacing: 0.1em;
+}
+
+/* VentureCycle Book Mock */
+.vc-canvas {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 1rem; position: relative;
+}
+.vc-book {
+  width: 160px; height: 200px;
+  background: linear-gradient(135deg, #0e0e0e 0%, #1a1508 100%);
+  border: 1px solid var(--border-strong);
+  border-radius: 2px 6px 6px 2px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.5), inset -3px 0 6px rgba(201,168,64,0.05);
+  position: relative;
+}
+.vc-book::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 8px;
+  background: var(--gold-dim);
+  border-radius: 2px 0 0 2px;
+}
+.vc-book-cover { text-align: center; padding: 1rem; }
+.vc-logo-text {
+  font-family: var(--font-display);
+  font-size: 2.5rem; color: var(--gold);
+  font-weight: 300; line-height: 1;
+}
+.vc-book-title {
+  font-family: var(--font-mono); font-size: 0.6rem;
+  color: var(--muted); letter-spacing: 0.15em;
+  margin-top: 0.5rem; text-transform: uppercase;
+}
+.vc-book-sub {
+  font-size: 0.55rem; color: var(--gold-dim);
+  letter-spacing: 0.1em; margin-top: 0.2rem;
+}
+.vc-pages {
+  display: flex; gap: 4px; margin-top: 0.5rem;
+}
+.vc-page {
+  width: 50px; height: 4px;
+  background: var(--border); border-radius: 1px;
+}
+.vc-page:first-child { background: var(--gold-dim); }
+.vc-tag-badge {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  color: var(--gold); border: 1px solid var(--border-strong);
+  padding: 0.25rem 0.7rem; border-radius: 2px; letter-spacing: 0.08em;
+}
+
+/* Responsive case studies */
+@media (max-width: 860px) {
+  .cs-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "visual"
+      "body"
+      "footer";
+  }
+  .cs-visual {
+    border-right: none !important;
+    border-left: none !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    min-height: 260px;
+  }
+  .cs-header, .cs-body { padding: 1.8rem; }
+  .cs-footer { padding: 1rem 1.8rem; }
+  .cs-title { font-size: 1.8rem; }
+}
+@media (max-width: 500px) {
+  .cs-dels { margin-inline-start: 0; }
+  .cs-footer { flex-direction: column; align-items: flex-start; }
+  .cs-results { gap: 1.3rem; }
+}
